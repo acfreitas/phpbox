@@ -1,4 +1,4 @@
-# A Development and Testing environment for PHP
+PHPBox [![Build Status](https://travis-ci.org/acfreitas/phpbox.svg?branch=master)](https://travis-ci.org/acfreitas/phpbox)
 
 ## Introduction
 
