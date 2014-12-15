@@ -1,4 +1,5 @@
-PHPBox [![Build Status](https://travis-ci.org/acfreitas/phpbox.svg?branch=master)](https://travis-ci.org/acfreitas/phpbox)
+PHPBox
+====
 
 ## Introduction
 
@@ -21,9 +22,11 @@ P.S. Use git clone --recursive for clone submodules yum, yum-mysql-community, ap
 
 - Ubuntu 12.04 LTS 32-bit
 - Git
-- PHP 5.5
+- PHP 5.5 (php5-gd php5-curl php5-xdebug php5-json php5-mysql libapache2-mod-php5)
 - PHPUnit
 - MySQL
+- Composer
+- Apache2
 
 ## More information
 Check the [Vagrant documentation](http://vagrantup.com/v1/docs/index.html) and [Chef Solo documentation](https://docs.chef.io/chef_solo.html)
