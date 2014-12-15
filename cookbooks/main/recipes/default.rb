@@ -19,11 +19,22 @@ node.set['mysql'] = {
 include_recipe 'mysql::server'
 include_recipe 'mysql::client'
 
-# Packages
+#Install environment dependences
+execute "sudo apt-get update"
 %w(
-  git-core curl php5-cli php5-curl php5-xdebug php5-json phpunit
+  git curl php5 php5-gd php5-curl php5-xdebug php5-json apache2 php5-mysql libapache2-mod-php5 unzip
 ).each do |package_name|
   package package_name do
     action :install
   end
 end
+
+#Install Composer global
+execute "curl -sS https://getcomposer.org/installer | php"
+execute "mv composer.phar /usr/local/bin/composer"
+
+#Enable mod_rewrite of Apache2
+#@see http://jaydson.org/habilitar-mod_rewrite-no-apache/
+execute "sudo a2enmod rewrite"
+execute "sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/sites-available/default"
+execute "sudo service apache2 reload"
